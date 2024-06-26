@@ -34,24 +34,24 @@ then
     done
 fi
 
-if ! command -v sdk &> /dev/null
+if ! command -v nvm &> /dev/null
 then
     while true; do
-        read -p "sdkman could not be found. Install? (Y/n) " yn
+        read -p "nvm could not be found. Install? (Y/n) " yn
         case $yn in
-            [Yy]* ) curl -s "https://get.sdkman.io" | bash; break;;
+            [Yy]* ) curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | PROFILE=/dev/null bash; break;;
             [Nn]* ) break;;
             * ) echo "Please answer (Y/n).";;
         esac
     done
 fi
 
-if ! command -v nvm &> /dev/null
+if ! command -v sdk &> /dev/null
 then
     while true; do
-        read -p "nvm could not be found. Install? (Y/n) " yn
+        read -p "sdkman could not be found. Install? (Y/n) " yn
         case $yn in
-            [Yy]* ) PROFILE=/dev/null curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash; break;;
+            [Yy]* ) curl -s "https://get.sdkman.io" | bash; break;;
             [Nn]* ) break;;
             * ) echo "Please answer (Y/n).";;
         esac
