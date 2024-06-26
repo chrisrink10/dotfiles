@@ -14,9 +14,13 @@ Configuration files.
 3. Stow any directories as you'd like:
 
 ```sh
-stow zsh-theme
-stow zsh-completions
-stow zsh-home
-stow iterm
-...
+stow zsh
+stow ...
 ```
+
+## iTerm2 Configuration
+
+1. Download and install [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro) font.
+2. Download and install [iTerm2](https://iterm2.com/downloads.html).
+3. Open iTerm2 Settings and navigate to `General > Settings > Load settings from a custom folder or URL`.
+4. Point that setting at `dotfiles/iterm2` and configure `Save changes` to `Manually`.

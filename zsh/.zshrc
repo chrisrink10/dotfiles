@@ -20,7 +20,7 @@ bindkey "^[[B" history-beginning-search-forward-end
 fpath+=($XDG_CONFIG_HOME/zsh/completions)
 
 # Enabling fzf for ctrl-R
-[ -f "$XDG_CONFIG_HOME/zsh/.fzf.zsh" ] && source "$XDG_CONFIG_HOME/zsh/.fzf.zsh"
+[ -f "$XDG_CONFIG_HOME/zsh/completions/fzf.zsh" ] && source "$XDG_CONFIG_HOME/zsh/completions/fzf.zsh"
 
 # Set up git completions (which were downloaded from https://github.com/git/git/blob/master/contrib/completion/)
 zstyle ':completion:*:*:git:*' script ~/.zsh/completions/git-completions.bash
@@ -44,3 +44,16 @@ eval "$(pyenv init -)"
 
 # Set up Poetry
 export PATH="$HOME/.local/bin:$PATH"
+
+# Configure NVM if installed
+if [ -d "$HOME/.nvm" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
+
+if [ -d "$HOME/.sdkman" ]; then
+  #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+  export SDKMAN_DIR="$HOME/.sdkman"
+  [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+fi
