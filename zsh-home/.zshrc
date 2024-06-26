@@ -43,5 +43,4 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 # Set up Poetry
-export PATH="/Users/christopher/.local/bin:$PATH"
-poetry completions zsh > ~/.zfunc/_poetry
+export PATH="$HOME/.local/bin:$PATH"
