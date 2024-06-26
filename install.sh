@@ -27,7 +27,7 @@ then
     while true; do
         read -p "poetry could not be found. Install? (Y/n) " yn
         case $yn in
-            [Yy]* ) /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";;
+            [Yy]* ) curl -sSL https://install.python-poetry.org | python3 -;;
             [Nn]* ) break;;
             * ) echo "Please answer (Y/n).";;
         esac
