@@ -5,7 +5,7 @@ then
     while true; do
         read -p "brew could not be found. Install? (Y/n) " yn
         case $yn in
-            [Yy]* ) /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";;
+            [Yy]* ) /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; break;;
             [Nn]* ) exit 0;;
             * ) echo "Please answer (Y/n).";;
         esac
@@ -27,7 +27,7 @@ then
     while true; do
         read -p "poetry could not be found. Install? (Y/n) " yn
         case $yn in
-            [Yy]* ) curl -sSL https://install.python-poetry.org | python3 -;;
+            [Yy]* ) curl -sSL https://install.python-poetry.org | python3 -; break;;
             [Nn]* ) break;;
             * ) echo "Please answer (Y/n).";;
         esac
@@ -39,7 +39,7 @@ then
     while true; do
         read -p "sdkman could not be found. Install? (Y/n) " yn
         case $yn in
-            [Yy]* ) curl -s "https://get.sdkman.io" | bash;;
+            [Yy]* ) curl -s "https://get.sdkman.io" | bash; break;;
             [Nn]* ) break;;
             * ) echo "Please answer (Y/n).";;
         esac
@@ -51,7 +51,7 @@ then
     while true; do
         read -p "nvm could not be found. Install? (Y/n) " yn
         case $yn in
-            [Yy]* ) PROFILE=/dev/null curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash;;
+            [Yy]* ) PROFILE=/dev/null curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash; break;;
             [Nn]* ) break;;
             * ) echo "Please answer (Y/n).";;
         esac
