@@ -16,6 +16,7 @@ Configuration files.
 
 ```sh
 stow zsh
+stow git
 stow spacemacs
 ```
 

@@ -1,5 +1,13 @@
 #!/usr/bin/env sh
 
+while true; do
+    read -p "Enter your default Git user email: " git_user_email
+    if [ ! -z "$git_user_email" ]; then
+        git config -f "$HOME/.gitconfig.local" --add user.email "$git_user_email"
+        break
+    fi
+done
+
 if ! command -v brew &> /dev/null
 then
     while true; do
